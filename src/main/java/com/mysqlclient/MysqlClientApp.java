@@ -1,28 +1,33 @@
 package com.mysqlclient;
 
 import com.mysqlclient.service.ConnectionManager;
-import com.mysqlclient.ui.MainWindow;
+import com.mysqlclient.ui.EnhancedMainWindow;
+import com.mysqlclient.util.ThemeManager;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
- * MySQL客户端主应用程序
+ * MySQL客户端主应用程序 - 商用级版本
  */
 public class MysqlClientApp extends Application {
 
     @Override
     public void start(Stage primaryStage) {
         try {
-            // 创建主窗口
-            MainWindow mainWindow = new MainWindow();
+            // 创建增强版主窗口
+            EnhancedMainWindow mainWindow = new EnhancedMainWindow(primaryStage);
             Scene scene = new Scene(mainWindow.getRoot(), 1280, 800);
 
+            // 应用主题
+            ThemeManager themeManager = ThemeManager.getInstance();
+            themeManager.setScene(scene);
+
             // 设置窗口属性
-            primaryStage.setTitle("MySQL Client");
+            primaryStage.setTitle("MySQL Client Pro - Professional Database Management Tool");
             primaryStage.setScene(scene);
-            primaryStage.setMinWidth(800);
-            primaryStage.setMinHeight(600);
+            primaryStage.setMinWidth(1024);
+            primaryStage.setMinHeight(768);
 
             // 窗口关闭时清理资源
             primaryStage.setOnCloseRequest(event -> {

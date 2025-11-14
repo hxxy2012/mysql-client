@@ -1,0 +1,34 @@
+/* Light Theme for MySQL Client */
+
+.root {
+    -fx-base: #ffffff;
+    -fx-background: #f4f4f4;
+    -fx-control-inner-background: #ffffff;
+    -fx-control-inner-background-alt: #f9f9f9;
+    -fx-accent: #0096C9;
+    -fx-focus-color: #0096C9;
+}
+
+/* Table View */
+.table-row-cell:odd {
+    -fx-background-color: #f9f9f9;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #0096C9;
+    -fx-text-fill: white;
+}
+
+/* Tool Bar */
+.tool-bar {
+    -fx-background-color: #f0f0f0;
+    -fx-border-color: #cccccc;
+    -fx-border-width: 0 0 1 0;
+}
+
+/* Status Bar */
+.status-bar {
+    -fx-background-color: #f0f0f0;
+    -fx-border-color: #cccccc;
+    -fx-border-width: 1 0 0 0;
+}
